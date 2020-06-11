@@ -1,6 +1,6 @@
 defmodule CrossedWires do
   def main do
-    intersecr_distances(read_wire(), read_wire())
+    intersect_distances(read_wire(), read_wire())
     |> Enum.min()
     |> IO.inspect(label: "closest intersection distance")
   end
@@ -24,21 +24,21 @@ defmodule CrossedWires do
   defp walk(?R, steps, x, y), do: {x + steps, y}
   defp walk(?L, steps, x, y), do: {x - steps, y}
 
-  defp intersecr_distances([], _), do: []
+  defp intersect_distances([], _), do: []
 
-  defp intersecr_distances([segment | w1], w2) do
-    intersecr_distances(segment, w2) ++ intersecr_distances(w1, w2)
+  defp intersect_distances([segment | w1], w2) do
+    intersect_distances(segment, w2) ++ intersect_distances(w1, w2)
   end
 
-  defp intersecr_distances(_, []), do: []
+  defp intersect_distances(_, []), do: []
 
-  defp intersecr_distances({a, b}, [{c, d} | w2]) do
+  defp intersect_distances({a, b}, [{c, d} | w2]) do
     cond do
       intersect(a, b, c, d) and a != c ->
-        [manhattan_distance(a, b, c, d) | intersecr_distances({a, b}, w2)]
+        [manhattan_distance(a, b, c, d) | intersect_distances({a, b}, w2)]
 
       true ->
-        intersecr_distances({a, b}, w2)
+        intersect_distances({a, b}, w2)
     end
   end
 
