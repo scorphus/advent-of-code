@@ -28,6 +28,9 @@ class Asteroid:
         return len(self.neighbors)
 
     def vaporize_asteroids(self, nth):
+        if len(self.neighbors) >= nth:
+            nth_key = sorted(self.neighbors.keys())[nth - 1]
+            return self.neighbors[nth_key][1]
         neighbors = sorted(self.neighbors)
         count = 0
         while True:
