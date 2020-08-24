@@ -1,6 +1,6 @@
 import sys
 from dataclasses import dataclass, field
-from math import atan, degrees
+from math import atan2, degrees
 from typing import Dict
 
 
@@ -14,15 +14,7 @@ class Asteroid:
         return pow(other.row - self.row, 2) + pow(other.col - self.col, 2)
 
     def add_neighbor(self, other):
-        if other.col == self.col:
-            tangent = float("inf") * (self.row - other.row)
-        else:
-            tangent = (self.row - other.row) / (other.col - self.col)
-        angle = degrees(atan(tangent))
-        if other.col >= self.col:
-            angle = 90 - angle
-        else:
-            angle = 270 - angle
+        angle = (degrees(atan2(self.row - other.row, self.col - other.col)) + 270) % 360
         distance = self.distance_from(other)
         if angle in self.neighbors and distance > self.neighbors[angle][0]:
             return
