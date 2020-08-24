@@ -1,6 +1,6 @@
 import sys
 from dataclasses import dataclass, field
-from math import atan, degrees, sqrt
+from math import atan, degrees
 from typing import Dict
 
 
@@ -11,7 +11,7 @@ class Asteroid:
     neighbors: Dict[float, tuple] = field(default_factory=dict)
 
     def distance_from(self, other):
-        return sqrt(pow(other.row - self.row, 2) + pow(other.col - self.col, 2))
+        return pow(other.row - self.row, 2) + pow(other.col - self.col, 2)
 
     def add_neighbor(self, other):
         if other.col == self.col:
