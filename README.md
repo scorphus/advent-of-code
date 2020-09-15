@@ -1,6 +1,6 @@
 # 🎄 Advent of Code
 
-Solutions to [Advent of Code]. Mostly in [Elixir].
+Solutions to [Advent of Code]. Mostly in [Elixir]. Hopefully also in [Rust].
 
 ## License
 
@@ -12,4 +12,5 @@ See [LICENSE] for details.
 
 [Advent of Code]: https://adventofcode.com/
 [Elixir]:         https://elixir-lang.org/
+[Rust]:           https://rust-lang.org/
 [LICENSE]:        LICENSE
