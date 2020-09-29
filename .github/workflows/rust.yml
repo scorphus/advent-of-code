@@ -1,0 +1,24 @@
+name: 2018
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: deps
+        run: sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
+      - name: fmt
+        run: make fmt
+        working-directory: 2018
+      - name: clippy
+        run: make clippy
+        working-directory: 2018
+      - name: test
+        run: make test
+        working-directory: 2018
