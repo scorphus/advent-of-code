@@ -1,4 +1,4 @@
-# 🎄 Advent of Code [![Build Status][badge-2018]][action-2018]
+# 🎄 Advent of Code [![Build Status][build-2018]][action-2018] [![Coverage Status][coverage-2018]][codecov-2018]
 
 Solutions to [Advent of Code]:
 
@@ -14,8 +14,10 @@ See [LICENSE] for details.
 
 
 [Advent of Code]: https://adventofcode.com/
-[badge-2018]:     https://github.com/scorphus/advent-of-code/workflows/2018/badge.svg
+[build-2018]:     https://github.com/scorphus/advent-of-code/workflows/2018/badge.svg
 [action-2018]:    https://github.com/scorphus/advent-of-code/actions?query=workflow%3A2018
+[coverage-2018]:  https://codecov.io/gh/scorphus/advent-of-code/branch/master/graph/badge.svg
+[codecov-2018]:   https://codecov.io/gh/scorphus/advent-of-code
 [2019 edition]:   https://adventofcode.com/2019
 [Elixir]:         https://elixir-lang.org/
 [2018 edition]:   https://adventofcode.com/2018
